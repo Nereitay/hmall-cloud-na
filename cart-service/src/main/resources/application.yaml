@@ -10,6 +10,27 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: ${hm.db.pw}
+  cloud:
+    consul:
+      host: ${hm.consul.host}
+      port: ${hm.consul.port}
+      discovery:
+        hostname: ${spring.cloud.client.ip-address}
+        instance-id: ${spring.application.name}:${spring.cloud.consul.discovery.hostname}:${server.port}
+        register: true
+        register-health-check: true
+        #        health-check-path: ${server.servlet.context-path}/actuator/health
+        healthCheckInterval: 15s
+        service-name: ${spring.application.name} #指定注册的服务名称 默认就是应用名
+  # actuator放开端口
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: health
+    endpoint:
+      health:
+        show-details: always
 mybatis-plus:
   configuration:
     default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
