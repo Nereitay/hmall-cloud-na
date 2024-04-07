@@ -11,14 +11,10 @@ import org.springframework.web.client.RestTemplate;
 @MapperScan("com.hmall.cart.mapper")
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients
+@EnableFeignClients(basePackages = "com.hmall.api.client")
 public class CartApplication {
     public static void main(String[] args) {
         SpringApplication.run(CartApplication.class, args);
     }
 
-    @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
 }
