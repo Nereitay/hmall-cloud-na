@@ -17,6 +17,6 @@ public interface ItemClient { // @RequestMapping annotation not allowed on @Feig
     @GetMapping("/items")
     List<ItemDTO> queryItemByIds(@RequestParam("ids") Collection<Long> ids);
 
-    @PutMapping("/stock/deduct")
+    @PutMapping("/items/stock/deduct")
     void deductStock(@RequestBody List<OrderDetailDTO> items);
 }
