@@ -60,6 +60,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+        <!--Connection Pool-->
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-okhttp</artifactId>
+        </dependency>
         <!--Load Balancer-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

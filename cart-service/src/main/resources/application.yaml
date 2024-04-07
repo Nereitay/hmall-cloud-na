@@ -60,3 +60,6 @@ knife4j:
         api-rule: package
         api-rule-resources:
           - com.hmall.cart.controller # Swagger扫描到Controller,会把Controller接口信息作为接口文档信息
+feign:
+  okhttp:
+    enabled: true # 开启OKHttp连接池支持
