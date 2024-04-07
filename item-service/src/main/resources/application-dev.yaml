@@ -3,3 +3,6 @@ hm:
     host: mysql
     port: 3306
     pw: root
+  consul:
+    host: consul
+    port: 8500

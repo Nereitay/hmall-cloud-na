@@ -1,0 +1,4 @@
+https://juejin.cn/post/7244497027757277244
+docker run -id --name=consul -p 8300:8300 -p 8301:8301 -p 8302:8302 -p 8500:8500 -p 8600:8600 -v consul-data:/consul/data consul:1.15.4 agent -server -ui -node=n1 -bootstrap-expect=1 -client='0.0.0.0' -advertise=服务器外网地址
+https://www.cnblogs.com/summerday152/p/14013439.html
+docker run -id -p 8500:8500 --name=consul -v consul-data:/consul/data consul:1.15.4 agent -server -bootstrap-expect=1 -ui -node=n1 -client=0.0.0.0

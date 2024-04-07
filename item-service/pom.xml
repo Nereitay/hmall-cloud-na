@@ -46,6 +46,20 @@
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
 
+        <!--Consul-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+        </dependency>
+        <!-- 默认情况加consul监控健康是开启的,
+            但是必须依赖健康监控依赖才能正确监控健康状态所以直接启动会显示错误,
+            引入健康监控依赖之后服务正常
+            这个包是用做健康度监控的-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
     </dependencies>
     <build>
         <finalName>${project.artifactId}</finalName>
