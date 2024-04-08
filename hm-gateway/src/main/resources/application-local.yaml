@@ -1,0 +1,4 @@
+hm:
+  consul:
+    host: localhost
+    port: 8500
