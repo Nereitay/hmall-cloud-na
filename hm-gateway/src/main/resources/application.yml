@@ -28,8 +28,9 @@ spring:
           uri: lb://trade-service
           predicates:
             - Path=/orders/**
-#      default-filters:
+      default-filters:
 #        - AddRequestHeader=headerName, headerValue
+        - PrintAny=1, 2, 3
     consul:
       host: ${hm.consul.host}
       port: ${hm.consul.port}
