@@ -11,6 +11,9 @@ import java.util.List;
 /**
  * 固定后缀： GatewayFilterFactory，方便配置使用
  * 前缀 PrintAny 写在配置文件中
+ *
+ * GlobalFilter直接对所有请求生效，
+ * 而GatewayFilter则需要在yaml文件配置指定作用的路由范围
  */
 @Component
 public class PrintAnyGatewayFilterFactory extends AbstractGatewayFilterFactory<PrintAnyGatewayFilterFactory.Config> {

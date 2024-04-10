@@ -6,6 +6,11 @@ import org.springframework.core.Ordered;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
+
+/**
+ * GlobalFilter直接对所有请求生效，
+ * 而GatewayFilter则需要在yaml文件配置指定作用的路由范围
+ */
 @Component
 public class MyGlobalFilter implements GlobalFilter, Ordered {
     /**
@@ -18,7 +23,7 @@ public class MyGlobalFilter implements GlobalFilter, Ordered {
      */
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        System.out.println("headers = " + exchange.getRequest().getHeaders());
+//        System.out.println("headers = " + exchange.getRequest().getHeaders());
         return chain.filter(exchange);
     }
 
