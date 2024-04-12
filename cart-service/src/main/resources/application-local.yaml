@@ -1,8 +1,0 @@
-hm:
-  db:
-    host: localhost
-    port: 3306
-    pw: root
-  consul:
-    host: localhost
-    port: 8500

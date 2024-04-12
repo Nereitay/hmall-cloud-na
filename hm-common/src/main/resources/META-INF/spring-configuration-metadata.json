@@ -165,6 +165,18 @@
       "name": "hm.auth.includePaths",
       "type": "java.util.List",
       "description": "登录拦截的路径"
+    },
+    {
+      "name": "hm.consul.host",
+      "type": "java.lang.String",
+      "description": "Consul地址",
+      "defaultValue": "192.168.150.101"
+    },
+    {
+      "name": "hm.consul.port",
+      "type": "java.lang.Integer",
+      "description": "Consul端口",
+      "defaultValue": "8500"
     }
   ],
   "hints": []
