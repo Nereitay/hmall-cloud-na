@@ -88,3 +88,5 @@ knife4j:
 feign:
   okhttp:
     enabled: true # 开启OKHttp连接池支持
+  circuitbreaker:
+    enabled: true
