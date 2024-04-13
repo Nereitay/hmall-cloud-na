@@ -90,3 +90,26 @@ feign:
     enabled: true # 开启OKHttp连接池支持
   circuitbreaker:
     enabled: true
+resilience4j:
+  retry: # 重试机制
+    instances: # 定义多个重试策略
+      retryApi: # 第一个重试策略名称，可以随便命名
+        max-attempts: 5
+        wait-duration: 1s
+  circuitbreaker: # 断路器
+    instances: # 定义多个断路器实例
+      cbApi: # 第一个断路器名称 可以随便命名
+        register-health-indicator: true # 是否将断路器的状态注册为健康指标
+        sliding-window-size: 10 # 计算失败率的滑动窗口大小为10 最近10次调用失败
+        permitted-number-of-calls-in-half-open-state: 3 # 半开状态尝试
+        sliding-window-type: TIME_BASED # 滑动窗口的类型基于时间
+        minimum-number-of-calls: 5 # 当短路器开始计算失败率之前 至少需要5次调用
+        wait-duration-in-open-state: 5s # 当断路器打开后（服务就不可用了），会等待5秒再尝试
+        failure-rate-threshold: 20 # 当失败率达到20%的时候，断路器会打开
+        event-consumer-buffer-size: 10 # 用于存储断路器相关事件的缓冲区大小
+  ratelimiter: # 限流配置 防止过多的请求进来
+    instances:
+      rlApi:
+        limit-for-period: 1 # 在特定的时间内，最大请求数量
+        limit-refresh-period: 1s # 每一秒会重置请求次数
+        timeout-duration: 100ms # 超时时间 1秒进1个请求
