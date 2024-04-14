@@ -22,6 +22,12 @@ spring:
 #        health-check-path: ${server.servlet.context-path}/actuator/health
         healthCheckInterval: 15s
         service-name: ${spring.application.name} #指定注册的服务名称 默认就是应用名
+  rabbitmq:
+    host: localhost
+    port: 5672
+    virtual-host: /hmall
+    username: hmall
+    password: 123
 # actuator放开端口
 management:
   endpoints:

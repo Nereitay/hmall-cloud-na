@@ -22,8 +22,8 @@ public interface ItemClient { // @RequestMapping annotation not allowed on @Feig
     List<ItemDTO> queryItemByIds(@RequestParam("ids") Collection<Long> ids);
 
     @PutMapping("/items/stock/deduct")
-    @TimeLimiter(name = "tlApi")
-    @Retry(name = "retryApi")
-    @CircuitBreaker(name = "cbApi")
+//    @TimeLimiter(name = "tlApi")
+//    @Retry(name = "retryApi")
+//    @CircuitBreaker(name = "cbApi")
     void deductStock(@RequestBody List<OrderDetailDTO> items);
 }
